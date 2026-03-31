@@ -3,94 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kooky Kiosk | Snacks</title>
+    <title>Kooky Kiosk | Premium Snacks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg: #fafafa;
-            --text: #222;
-            --accent: #000;
-            --card-bg: #ffffff;
-        }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); margin: 0; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; }
-        
-        /* Header Section */
-        .header { text-align: center; margin-bottom: 40px; }
-        .logo { width: 100px; height: 100px; border-radius: 50%; background: #eee; margin-bottom: 15px; object-fit: cover; }
-        h1 { margin: 10px 0 5px; letter-spacing: -1px; }
-        .reg-no { font-size: 0.85rem; color: #666; text-transform: uppercase; }
-
-        /* Social Links */
-        .social-links { display: flex; gap: 15px; margin: 25px 0; flex-wrap: wrap; justify-content: center; }
-        .social-links a { text-decoration: none; padding: 10px 20px; border: 1px solid var(--accent); border-radius: 30px; color: var(--accent); font-weight: 500; font-size: 14px; transition: 0.3s; }
-        .social-links a:hover { background: var(--accent); color: white; }
-
-        /* Product List */
-        #product-container { width: 100%; max-width: 500px; }
-        .product-card { background: var(--card-bg); border: 1px solid #eaeaea; border-radius: 12px; padding: 15px; margin-bottom: 15px; display: flex; align-items: center; gap: 15px; }
-        .product-img { width: 70px; height: 70px; border-radius: 8px; object-fit: cover; }
-        .product-info h3 { margin: 0; font-size: 16px; }
-        .product-info p { margin: 5px 0 0; font-size: 13px; color: #666; line-height: 1.4; }
-
-        .whatsapp-btn { margin-top: 30px; color: #25D366; text-decoration: none; font-weight: bold; }
+        body { font-family: 'Inter', sans-serif; background-color: #fbfbfb; }
+        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .product-card:hover .product-image { transform: scale(1.05); }
     </style>
 </head>
-<body>
+<body class="text-gray-900 antialiased">
 
-    <div class="header">
-        <img src="YOUR_LOGO_URL_HERE" alt="Kooky Kiosk Logo" class="logo">
-        <h1>Kooky Kiosk</h1>
-        <div class="reg-no">Reg: [Your Registration Number]</div>
-    </div>
+    <header class="sticky top-0 z-50 glass">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="logo.png" alt="Logo" class="w-10 h-10 rounded-full shadow-sm">
+                <div>
+                    <h1 class="font-bold text-xl tracking-tight">KOOKY KIOSK</h1>
+                    <p class="text-[10px] text-gray-400 tracking-widest uppercase font-semibold">Reg: [Your Reg No]</p>
+                </div>
+            </div>
+            <a href="https://wa.me/YOUR_PHONE" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full text-sm font-medium transition-all shadow-md">
+                WhatsApp Us
+            </a>
+        </div>
+    </header>
 
-    <div class="social-links">
-        <a href="YOUR_SHOPEE_URL" target="_blank">Shopee</a>
-        <a href="YOUR_LAZADA_URL" target="_blank">Lazada</a>
-        <a href="YOUR_TIKTOK_URL" target="_blank">TikTok</a>
-    </div>
+    <main class="max-w-6xl mx-auto px-6 py-12">
+        <section class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Elevated snacking, <br><span class="text-orange-500">delivered to you.</span></h2>
+            <p class="text-gray-500 max-w-lg mx-auto">Discover our curated selection of premium snacks available across your favorite platforms.</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 mt-8">
+                <a href="YOUR_SHOPEE" class="flex items-center gap-2 px-6 py-3 border border-gray-200 rounded-2xl hover:bg-white hover:shadow-lg transition-all font-medium">
+                    <span class="w-2 h-2 bg-orange-600 rounded-full"></span> Shopee
+                </a>
+                <a href="YOUR_LAZADA" class="flex items-center gap-2 px-6 py-3 border border-gray-200 rounded-2xl hover:bg-white hover:shadow-lg transition-all font-medium">
+                    <span class="w-2 h-2 bg-blue-600 rounded-full"></span> Lazada
+                </a>
+                <a href="YOUR_TIKTOK" class="flex items-center gap-2 px-6 py-3 border border-gray-200 rounded-2xl hover:bg-white hover:shadow-lg transition-all font-medium">
+                    <span class="w-2 h-2 bg-black rounded-full"></span> TikTok Shop
+                </a>
+            </div>
+        </section>
 
-    <div id="product-container">
-        <p style="text-align:center">Loading snacks...</p>
-    </div>
+        <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="animate-pulse bg-gray-100 h-64 rounded-3xl"></div>
+            <div class="animate-pulse bg-gray-100 h-64 rounded-3xl"></div>
+            <div class="animate-pulse bg-gray-100 h-64 rounded-3xl"></div>
+        </div>
+    </main>
 
-    <a href="https://wa.me/YOUR_PHONE_NUMBER" class="whatsapp-btn">Contact us on WhatsApp</a>
+    <footer class="py-12 border-t border-gray-100 text-center text-gray-400 text-sm">
+        &copy; 2026 Kooky Kiosk. All Rights Reserved.
+    </footer>
 
-    <script>
-        // REPLACE THIS with your Published Google Sheet CSV Link
-        const sheetUrl = 'YOUR_PUBLISHED_CSV_LINK_HERE';
-
-        async function loadProducts() {
-            try {
-                const response = await fetch(sheetUrl);
-                const data = await response.text();
-                const rows = data.split('\n').slice(1); // Skip header row
-                
-                const container = document.getElementById('product-container');
-                container.innerHTML = ''; // Clear loading text
-
-                rows.forEach(row => {
-                    const columns = row.split(',');
-                    if (columns.length >= 3) {
-                        const name = columns[0];
-                        const img = columns[1];
-                        const desc = columns[2];
-
-                        container.innerHTML += `
-                            <div class="product-card">
-                                <img src="${img}" class="product-img" alt="${name}">
-                                <div class="product-info">
-                                    <h3>${name}</h3>
-                                    <p>${desc}</p>
-                                </div>
-                            </div>
-                        `;
-                    }
-                });
-            } catch (error) {
-                console.error("Error loading sheet:", error);
-            }
-        }
-
-        loadProducts();
-    </script>
-</body>
-</html>
+    <script
