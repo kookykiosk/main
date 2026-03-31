@@ -19,27 +19,33 @@
 <body class="text-gray-900 antialiased">
 
     <header class="sticky top-0 z-50 glass">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <img src="/images/logo.jpg" alt="Logo" class="w-12 h-12 rounded-full shadow-sm object-cover bg-white">
+        <div class="max-w-6xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2 md:gap-3">
+                <img src="/images/logo.jpg" alt="Logo" class="w-12 h-12 md:w-12 md:h-12 rounded-full shadow-sm object-cover bg-white">
                 <div>
-                    <h1 class="font-bold text-lg tracking-tight leading-none text-slate-900">KOOKY KIOSK</h1>
-                    <p class="text-[8px] text-gray-400 tracking-widest uppercase font-bold mt-1">Reg: 202603078107 (SA0650753-V)</p>
+                    <h1 class="font-bold text-sm md:text-lg tracking-tight leading-none text-slate-900 uppercase">KOOKY KIOSK</h1>
+                    <p class="text-[7px] md:text-[8px] text-gray-400 tracking-widest uppercase font-bold mt-1">Reg: 202603078107 (SA0650753-V)</p>
                 </div>
             </div>
-            <a href="https://wa.me/0179056448" target="_blank" class="bg-[#121212] hover:bg-green-600 text-white px-5 py-2.5 rounded-full text-[10px] font-bold transition-all duration-300 shadow-lg uppercase tracking-wider">
-                WhatsApp
-            </a>
+            
+            <div class="flex items-center gap-2">
+                <a href="mailto:hello@kookykiosk.com" class="hidden md:block bg-white border border-slate-200 hover:border-slate-400 text-slate-700 px-4 py-2 rounded-full text-[10px] font-bold transition-all duration-300 uppercase tracking-wider">
+                    Email Us
+                </a>
+                <a href="https://wa.me/0179056448" class="bg-[#121212] hover:bg-green-600 text-white px-4 py-2 md:px-5 md:py-2.5 rounded-full text-[9px] md:text-[10px] font-bold transition-all duration-300 shadow-lg uppercase tracking-wider">
+                    WhatsApp
+                </a>
+            </div>
         </div>
     </header>
 
     <main class="max-w-6xl mx-auto px-6 py-12">
         <section class="text-center mb-12">
             <h2 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-slate-900 leading-tight">Elevated snacking.</h2>
-            <p class="text-gray-500 max-w-sm mx-auto text-sm mb-8">Available on Shopee, Lazada & TikTok Shop.</p>
+            <p class="text-gray-500 max-w-sm mx-auto text-sm mb-8">Premium snack selections curated for your lifestyle.</p>
             
             <div class="relative max-w-md mx-auto mb-10">
-                <input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="Search for your favorite snack..." 
+                <input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="Search our catalog..." 
                        class="w-full px-6 py-4 rounded-2xl border border-gray-100 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-100 transition-all text-sm">
                 <div class="absolute right-4 top-4 text-gray-300">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -47,74 +53,8 @@
             </div>
 
             <div class="flex flex-wrap justify-center gap-2 mb-16">
-                <a href="https://shopee.com.my/shop/42720713" target="_blank" class="px-5 py-2 bg-white border border-gray-100 rounded-xl hover:shadow-md transition-all text-[11px] font-bold">SHOPEE MY</a>
-                <a href="https://shopee.sg/kookykiosk.sg" target="_blank" class="px-5 py-2 bg-white border border-gray-100 rounded-xl hover:shadow-md transition-all text-[11px] font-bold">SHOPEE SG</a>
-                <a href="https://www.lazada.com.my/shop/kooky-kiosk" target="_blank" class="px-5 py-2 bg-white border border-gray-100 rounded-xl hover:shadow-md transition-all text-[11px] font-bold">LAZADA</a>
-                <a href="https://vt.tiktok.com/ZSHYUs7Jq/" target="_blank" class="px-5 py-2 bg-white border border-gray-100 rounded-xl hover:shadow-md transition-all text-[11px] font-bold text-pink-500">TIKTOK</a>
+                <a href="https://shopee.com.my/shop/42720713" target="_blank" class="px-4 py-2 bg-white border border-gray-100 rounded-xl hover:shadow-md transition-all text-[10px] font-bold tracking-wider">SHOPEE MY</a>
+                <a href="https://shopee.sg/kookykiosk.sg" target="_blank" class="px-4 py-2 bg-white border border-gray-100 rounded-xl hover:shadow-md transition-all text-[10px] font-bold tracking-wider">SHOPEE SG</a>
+                <a href="https://www.lazada.com.my/shop/kooky-kiosk" target="_blank" class="px-4 py-2 bg-white border border-gray-100 rounded-xl hover:shadow-md transition-all text-[10px] font-bold tracking-wider">LAZADA</a>
+                <a href="https://vt.tiktok.com/ZSHYUs7Jq/" target="_blank" class="px-4 py-2 bg-white border border-gray-100 rounded-xl hover:shadow-md transition-all text-[10px] font-bold text-pink-500 tracking-wider text-center">TIKTOK SHOP</a>
             </div>
-        </section>
-
-        <div id="product-container" class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
-            <div class="bg-white h-64 rounded-[2rem] animate-pulse border border-gray-50"></div>
-            <div class="bg-white h-64 rounded-[2rem] animate-pulse border border-gray-50"></div>
-            <div class="bg-white h-64 rounded-[2rem] animate-pulse border border-gray-50"></div>
-        </div>
-    </main>
-
-    <footer class="py-16 text-center border-t border-gray-50">
-        <p class="text-[10px] text-gray-400 font-bold tracking-[0.3em] uppercase">Kooky Kiosk &copy; 2026</p>
-    </footer>
-
-    <script>
-        const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTvHOdCQEWzQMpbPfPGYahxvGt56y2xHNQkEZtT-wJ9tuQC08D093TLj0W6vOvLwsGWNFRAHPhkGUV3/pub?output=csv';
-
-        async function loadProducts() {
-            try {
-                const response = await fetch(sheetUrl);
-                const data = await response.text();
-                const rows = data.split('\n').slice(1);
-                const container = document.getElementById('product-container');
-                container.innerHTML = ''; 
-
-                rows.forEach((row, index) => {
-                    const columns = row.match(/(".*?"|[^",\r\n]+)(?=\s*,|\s*$)/g);
-                    if (columns && columns.length >= 2) {
-                        const name = columns[0].replace(/"/g, "");
-                        const img = columns[1].replace(/"/g, "");
-
-                        container.innerHTML += `
-                            <div class="product-item group bg-white rounded-[2rem] p-4 border border-slate-50 transition-all duration-700 hover:shadow-xl hover:-translate-y-1 animate-in" style="animation-delay: ${index * 0.05}s">
-                                <div class="relative overflow-hidden rounded-[1.5rem] bg-slate-50 aspect-square">
-                                    <img src="${img}" class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110" alt="${name}">
-                                </div>
-                                <div class="mt-6 text-center">
-                                    <h3 class="product-name text-sm md:text-base font-bold text-slate-800 leading-tight px-2">${name}</h3>
-                                    <p class="text-[9px] text-slate-300 uppercase tracking-widest mt-3 font-bold">Signature</p>
-                                </div>
-                            </div>
-                        `;
-                    }
-                });
-            } catch (error) {
-                console.error("Error loading sheet");
-            }
-        }
-
-        function filterProducts() {
-            const input = document.getElementById('searchInput').value.toLowerCase();
-            const items = document.getElementsByClassName('product-item');
-            
-            for (let i = 0; i < items.length; i++) {
-                const name = items[i].getElementsByClassName('product-name')[0].innerText.toLowerCase();
-                if (name.includes(input)) {
-                    items[i].style.display = "";
-                } else {
-                    items[i].style.display = "none";
-                }
-            }
-        }
-
-        loadProducts();
-    </script>
-</body>
-</html>
