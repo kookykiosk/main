@@ -61,4 +61,48 @@
         &copy; 2026 Kooky Kiosk. All Rights Reserved.
     </footer>
 
-    <script
+    <script>
+        const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTvHOdCQEWzQMpbPfPGYahxvGt56y2xHNQkEZtT-wJ9tuQC08D093TLj0W6vOvLwsGWNFRAHPhkGUV3/pub?output=csv';
+
+        async function loadProducts() {
+            try {
+                const response = await fetch(sheetUrl);
+                const data = await response.text();
+                const rows = data.split('\n').slice(1);
+                const container = document.getElementById('product-container');
+                container.innerHTML = ''; 
+
+                rows.forEach(row => {
+                    // This handles CSV parsing with quotes for commas inside descriptions
+                    const columns = row.match(/(".*?"|[^",\r\n]+)(?=\s*,|\s*$)/g);
+                    
+                    if (columns && columns.length >= 3) {
+                        const name = columns[0].replace(/"/g, "");
+                        const img = columns[1].replace(/"/g, "");
+                        const desc = columns[2].replace(/"/g, "");
+
+                        container.innerHTML += `
+                            <div class="product-card group bg-white rounded-[2rem] p-4 shadow-sm border border-gray-50 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                                <div class="relative overflow-hidden rounded-[1.5rem] bg-gray-50 mb-6 aspect-square">
+                                    <img src="${img}" class="product-image w-full h-full object-cover transition-transform duration-700" alt="${name}">
+                                </div>
+                                <div class="px-2">
+                                    <h3 class="text-xl font-bold text-gray-900 group-hover:text-orange-500 transition-colors">${name}</h3>
+                                    <p class="text-gray-500 text-sm mt-2 leading-relaxed line-clamp-2">${desc}</p>
+                                    <div class="mt-6 pt-4 border-t border-gray-50 flex justify-between items-center">
+                                        <span class="text-xs font-bold uppercase tracking-widest text-gray-300">Available Now</span>
+                                        <button class="bg-gray-900 text-white text-xs px-4 py-2 rounded-full font-bold group-hover:bg-orange-500 transition-colors">View Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                });
+            } catch (error) {
+                document.getElementById('product-container').innerHTML = '<p class="col-span-full text-center py-10 text-gray-400">Unable to load inventory. Check Google Sheet permissions.</p>';
+            }
+        }
+        loadProducts();
+    </script>
+</body>
+</html>
