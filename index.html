@@ -21,7 +21,7 @@
     <header class="sticky top-0 z-50 glass">
         <div class="max-w-6xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-2 md:gap-3">
-                <img src="/images/logo.jpg" alt="Logo" class="w-12 h-12 md:w-12 md:h-12 rounded-full shadow-sm object-cover bg-white">
+                <img src="/images/logo.jpg" alt="Logo" class="w-10 h-10 md:w-12 md:h-12 rounded-full shadow-sm object-cover bg-white">
                 <div>
                     <h1 class="font-bold text-sm md:text-lg tracking-tight leading-none text-slate-900 uppercase">KOOKY KIOSK</h1>
                     <p class="text-[7px] md:text-[8px] text-gray-400 tracking-widest uppercase font-bold mt-1">Reg: 202603078107 (SA0650753-V)</p>
@@ -58,3 +58,64 @@
                 <a href="https://www.lazada.com.my/shop/kooky-kiosk" target="_blank" class="px-4 py-2 bg-white border border-gray-100 rounded-xl hover:shadow-md transition-all text-[10px] font-bold tracking-wider">LAZADA</a>
                 <a href="https://vt.tiktok.com/ZSHYUs7Jq/" target="_blank" class="px-4 py-2 bg-white border border-gray-100 rounded-xl hover:shadow-md transition-all text-[10px] font-bold text-pink-500 tracking-wider text-center">TIKTOK SHOP</a>
             </div>
+        </section>
+
+        <div id="product-container" class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
+            <div class="bg-white h-64 rounded-[2rem] animate-pulse border border-gray-50"></div>
+            <div class="bg-white h-64 rounded-[2rem] animate-pulse border border-gray-50"></div>
+        </div>
+    </main>
+
+    <footer class="py-12 text-center border-t border-gray-50">
+        <p class="text-[10px] text-gray-400 font-bold tracking-[0.3em] uppercase mb-4">Kooky Kiosk &copy; 2026</p>
+        <a href="mailto:hello@kookykiosk.com" class="md:hidden text-[10px] font-bold text-slate-400 underline underline-offset-4 uppercase tracking-widest">Email Our Team</a>
+    </footer>
+
+    <script>
+        const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTvHOdCQEWzQMpbPfPGYahxvGt56y2xHNQkEZtT-wJ9tuQC08D093TLj0W6vOvLwsGWNFRAHPhkGUV3/pub?output=csv';
+
+        async function loadProducts() {
+            try {
+                const response = await fetch(sheetUrl);
+                const data = await response.text();
+                const rows = data.split('\n').slice(1);
+                const container = document.getElementById('product-container');
+                container.innerHTML = ''; 
+
+                rows.forEach((row, index) => {
+                    const columns = row.match(/(".*?"|[^",\r\n]+)(?=\s*,|\s*$)/g);
+                    if (columns && columns.length >= 2) {
+                        const name = columns[0].replace(/"/g, "");
+                        const img = columns[1].replace(/"/g, "");
+
+                        container.innerHTML += `
+                            <div class="product-item group bg-white rounded-[2rem] p-4 border border-slate-50 transition-all duration-700 hover:shadow-xl hover:-translate-y-1 animate-in" style="animation-delay: ${index * 0.05}s">
+                                <div class="relative overflow-hidden rounded-[1.5rem] bg-slate-50 aspect-square">
+                                    <img src="${img}" class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110" alt="${name}">
+                                </div>
+                                <div class="mt-6 text-center">
+                                    <h3 class="product-name text-xs md:text-sm font-bold text-slate-800 leading-tight px-2">${name}</h3>
+                                    <p class="text-[8px] text-slate-300 uppercase tracking-widest mt-3 font-bold">Premium Selection</p>
+                                </div>
+                            </div>
+                        `;
+                    }
+                });
+            } catch (error) {
+                console.error("Sheet Error");
+            }
+        }
+
+        function filterProducts() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const items = document.getElementsByClassName('product-item');
+            for (let i = 0; i < items.length; i++) {
+                const name = items[i].getElementsByClassName('product-name')[0].innerText.toLowerCase();
+                items[i].style.display = name.includes(input) ? "" : "none";
+            }
+        }
+
+        loadProducts();
+    </script>
+</body>
+</html>
