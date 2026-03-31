@@ -1,193 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kooky Kiosk</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kooky Kiosk | Snacks</title>
+    <style>
+        :root {
+            --bg: #fafafa;
+            --text: #222;
+            --accent: #000;
+            --card-bg: #ffffff;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); margin: 0; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; }
+        
+        /* Header Section */
+        .header { text-align: center; margin-bottom: 40px; }
+        .logo { width: 100px; height: 100px; border-radius: 50%; background: #eee; margin-bottom: 15px; object-fit: cover; }
+        h1 { margin: 10px 0 5px; letter-spacing: -1px; }
+        .reg-no { font-size: 0.85rem; color: #666; text-transform: uppercase; }
 
-<!-- Font -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+        /* Social Links */
+        .social-links { display: flex; gap: 15px; margin: 25px 0; flex-wrap: wrap; justify-content: center; }
+        .social-links a { text-decoration: none; padding: 10px 20px; border: 1px solid var(--accent); border-radius: 30px; color: var(--accent); font-weight: 500; font-size: 14px; transition: 0.3s; }
+        .social-links a:hover { background: var(--accent); color: white; }
 
-<style>
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #ffffff;
-  color: #111;
-}
+        /* Product List */
+        #product-container { width: 100%; max-width: 500px; }
+        .product-card { background: var(--card-bg); border: 1px solid #eaeaea; border-radius: 12px; padding: 15px; margin-bottom: 15px; display: flex; align-items: center; gap: 15px; }
+        .product-img { width: 70px; height: 70px; border-radius: 8px; object-fit: cover; }
+        .product-info h3 { margin: 0; font-size: 16px; }
+        .product-info p { margin: 5px 0 0; font-size: 13px; color: #666; line-height: 1.4; }
 
-.container {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Header */
-.header {
-  text-align: center;
-  font-size: 28px;
-  font-weight: 700;
-  margin: 40px 0;
-}
-
-/* Product List */
-.product {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  padding: 16px 0;
-}
-
-.product img {
-  width: 80px;
-  height: 80px;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-.product-name {
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.product-desc {
-  font-size: 13px;
-  color: #8a8a8a;
-}
-
-.divider {
-  height: 1px;
-  background: #eeeeee;
-}
-
-/* Sections */
-.section {
-  text-align: center;
-  margin: 80px 0 40px;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-/* Buttons */
-.btn {
-  display: block;
-  width: 220px;
-  margin: 10px auto;
-  padding: 12px;
-  background: #111;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 14px;
-  transition: 0.2s;
-}
-
-.btn:hover {
-  background: #333;
-}
-
-/* Contact */
-.contact {
-  text-align: center;
-  color: #8a8a8a;
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-/* Social */
-.social {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 14px;
-}
-
-.social a {
-  margin: 0 10px;
-  color: #8a8a8a;
-  text-decoration: none;
-}
-
-.social a:hover {
-  color: #111;
-}
-
-/* Footer */
-.footer {
-  text-align: center;
-  margin: 60px 0 20px;
-  font-size: 12px;
-  color: #aaa;
-}
-</style>
+        .whatsapp-btn { margin-top: 30px; color: #25D366; text-decoration: none; font-weight: bold; }
+    </style>
 </head>
-
 <body>
 
-<div class="container">
+    <div class="header">
+        <img src="YOUR_LOGO_URL_HERE" alt="Kooky Kiosk Logo" class="logo">
+        <h1>Kooky Kiosk</h1>
+        <div class="reg-no">Reg: [Your Registration Number]</div>
+    </div>
 
-  <!-- Header -->
-  <div class="header">Kooky Kiosk</div>
+    <div class="social-links">
+        <a href="YOUR_SHOPEE_URL" target="_blank">Shopee</a>
+        <a href="YOUR_LAZADA_URL" target="_blank">Lazada</a>
+        <a href="YOUR_TIKTOK_URL" target="_blank">TikTok</a>
+    </div>
 
-  <!-- Product List (Dynamic Area) -->
-  <div id="products"></div>
+    <div id="product-container">
+        <p style="text-align:center">Loading snacks...</p>
+    </div>
 
-  <!-- Shop Section -->
-  <div class="section">Shop</div>
+    <a href="https://wa.me/YOUR_PHONE_NUMBER" class="whatsapp-btn">Contact us on WhatsApp</a>
 
-  <a class="btn" href="https://shopee.com/YOUR_STORE" target="_blank">Shopee</a>
-  <a class="btn" href="https://lazada.com/YOUR_STORE" target="_blank">Lazada</a>
-  <a class="btn" href="https://tiktok.com/@YOUR_STORE" target="_blank">TikTok</a>
+    <script>
+        // REPLACE THIS with your Published Google Sheet CSV Link
+        const sheetUrl = 'YOUR_PUBLISHED_CSV_LINK_HERE';
 
-  <!-- Contact -->
-  <div class="section">Contact</div>
-  <div class="contact">
-    WhatsApp: +60XXXXXXXXX<br>
-    Email: hello@kookykiosk.com
-  </div>
+        async function loadProducts() {
+            try {
+                const response = await fetch(sheetUrl);
+                const data = await response.text();
+                const rows = data.split('\n').slice(1); // Skip header row
+                
+                const container = document.getElementById('product-container');
+                container.innerHTML = ''; // Clear loading text
 
-  <!-- Social -->
-  <div class="social">
-    <a href="#">Facebook</a>
-    <a href="#">Instagram</a>
-  </div>
+                rows.forEach(row => {
+                    const columns = row.split(',');
+                    if (columns.length >= 3) {
+                        const name = columns[0];
+                        const img = columns[1];
+                        const desc = columns[2];
 
-  <!-- Footer -->
-  <div class="footer">© Kooky Kiosk</div>
+                        container.innerHTML += `
+                            <div class="product-card">
+                                <img src="${img}" class="product-img" alt="${name}">
+                                <div class="product-info">
+                                    <h3>${name}</h3>
+                                    <p>${desc}</p>
+                                </div>
+                            </div>
+                        `;
+                    }
+                });
+            } catch (error) {
+                console.error("Error loading sheet:", error);
+            }
+        }
 
-</div>
-
-<!-- Google Sheets Integration -->
-<script>
-async function loadProducts() {
-  const res = await fetch("YOUR_GOOGLE_SHEET_CSV_URL");
-  const data = await res.text();
-
-  const rows = data.split("\n").slice(1);
-  const container = document.getElementById("products");
-
-  rows.forEach((row, index) => {
-    const cols = row.split(",");
-    if (!cols[0]) return;
-
-    const item = document.createElement("div");
-
-    item.innerHTML = `
-      <div class="product">
-        <img src="${cols[1]}" alt="">
-        <div>
-          <div class="product-name">${cols[0]}</div>
-          <div class="product-desc">${cols[2]}</div>
-        </div>
-      </div>
-      <div class="divider"></div>
-    `;
-
-    container.appendChild(item);
-  });
-}
-
-loadProducts();
-</script>
-
+        loadProducts();
+    </script>
 </body>
 </html>
