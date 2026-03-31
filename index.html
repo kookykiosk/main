@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="/images/logo.jpg" type="image/x-icon">
+    <link rel="icon" href="/images/logo.jpg" type="image/x-icon">
     <title>Kooky Kiosk | Premium Snacks</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #fbfbfb; }
-        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
-        .product-card:hover .product-image { transform: scale(1.05); }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #FFFDF9; /* Soft premium cream background */
+        }
+        .glass { 
+            background: rgba(255, 253, 249, 0.8); 
+            backdrop-filter: blur(12px); 
+            border-bottom: 1px solid rgba(0, 0, 0, 0.03); 
+        }
     </style>
 </head>
 <body class="text-gray-900 antialiased">
@@ -20,48 +26,50 @@
     <header class="sticky top-0 z-50 glass">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <img src="/images/logo.jpg" alt="Logo" class="w-20 h-20 rounded-full shadow-sm">
+                <img src="/images/logo.jpg" alt="Logo" class="w-14 h-14 rounded-full shadow-sm object-cover bg-white">
                 <div>
-                    <h1 class="font-bold text-xl tracking-tight">KOOKY KIOSK</h1>
-                    <p class="text-[10px] text-gray-400 tracking-widest uppercase font-semibold">Reg: 202603078107 (SA0650753-V)</p>
+                    <h1 class="font-bold text-xl tracking-tight leading-none text-slate-900">KOOKY KIOSK</h1>
+                    <p class="text-[9px] text-gray-400 tracking-widest uppercase font-bold mt-1">Reg: 202603078107 (SA0650753-V)</p>
                 </div>
             </div>
-            <a href="https://wa.me/0179056448" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full text-sm font-medium transition-all shadow-md">
+            <a href="https://wa.me/0179056448" class="bg-[#121212] hover:bg-green-600 text-white px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 shadow-lg">
                 WhatsApp Us
             </a>
         </div>
     </header>
 
-    <main class="max-w-6xl mx-auto px-6 py-12">
-        <section class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Elevated snacking, <br><span class="text-orange-500">delivered to you.</span></h2>
-            <p class="text-gray-500 max-w-lg mx-auto">Discover our curated selection of premium snacks available across your favorite platforms.</p>
+    <main class="max-w-6xl mx-auto px-6 py-16">
+        <section class="text-center mb-20">
+            <span class="inline-block px-4 py-1 rounded-full bg-orange-50 text-orange-600 text-[10px] font-bold uppercase tracking-widest mb-6 border border-orange-100">Visual Catalog 2026</span>
+            <h2 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-slate-900 leading-tight">Elevated snacking, <br><span class="text-orange-500">delivered to you.</span></h2>
+            <p class="text-gray-500 max-w-lg mx-auto text-lg">Discover our curated selection of premium snacks available across your favorite platforms.</p>
             
-            <div class="flex flex-wrap justify-center gap-4 mt-8">
-                <a href="https://shopee.com.my/shop/42720713" target="_blank" class="flex items-center gap-2 px-6 py-3 border border-gray-200 rounded-2xl hover:bg-white hover:shadow-lg transition-all font-medium">
+            <div class="flex flex-wrap justify-center gap-3 mt-10">
+                <a href="https://shopee.com.my/shop/42720713" target="_blank" class="flex items-center gap-3 px-6 py-3.5 bg-white border border-gray-100 rounded-2xl hover:border-orange-200 hover:shadow-xl transition-all duration-300 font-bold text-sm">
                     <span class="w-2 h-2 bg-orange-600 rounded-full"></span> Shopee MY
                 </a>
-				<a href="https://shopee.sg/kookykiosk.sg" target="_blank" class="flex items-center gap-2 px-6 py-3 border border-gray-200 rounded-2xl hover:bg-white hover:shadow-lg transition-all font-medium">
+                <a href="https://shopee.sg/kookykiosk.sg" target="_blank" class="flex items-center gap-3 px-6 py-3.5 bg-white border border-gray-100 rounded-2xl hover:border-orange-200 hover:shadow-xl transition-all duration-300 font-bold text-sm">
                     <span class="w-2 h-2 bg-orange-600 rounded-full"></span> Shopee SG
                 </a>
-                <a href="https://www.lazada.com.my/shop/kooky-kiosk" target="_blank" class="flex items-center gap-2 px-6 py-3 border border-gray-200 rounded-2xl hover:bg-white hover:shadow-lg transition-all font-medium">
+                <a href="https://www.lazada.com.my/shop/kooky-kiosk" target="_blank" class="flex items-center gap-3 px-6 py-3.5 bg-white border border-gray-100 rounded-2xl hover:border-blue-200 hover:shadow-xl transition-all duration-300 font-bold text-sm">
                     <span class="w-2 h-2 bg-blue-600 rounded-full"></span> Lazada MY
                 </a>
-                <a href="https://vt.tiktok.com/ZSHYUs7Jq/" target="_blank" class="flex items-center gap-2 px-6 py-3 border border-gray-200 rounded-2xl hover:bg-white hover:shadow-lg transition-all font-medium">
+                <a href="https://vt.tiktok.com/ZSHYUs7Jq/" target="_blank" class="flex items-center gap-3 px-6 py-3.5 bg-white border border-gray-100 rounded-2xl hover:border-slate-400 hover:shadow-xl transition-all duration-300 font-bold text-sm">
                     <span class="w-2 h-2 bg-black rounded-full"></span> TikTok Shop MY
                 </a>
             </div>
         </section>
 
-        <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="animate-pulse bg-gray-100 h-64 rounded-3xl"></div>
-            <div class="animate-pulse bg-gray-100 h-64 rounded-3xl"></div>
-            <div class="animate-pulse bg-gray-100 h-64 rounded-3xl"></div>
+        <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div class="animate-pulse bg-white border border-gray-50 h-80 rounded-[2.5rem]"></div>
+            <div class="animate-pulse bg-white border border-gray-50 h-80 rounded-[2.5rem]"></div>
+            <div class="animate-pulse bg-white border border-gray-50 h-80 rounded-[2.5rem]"></div>
         </div>
     </main>
 
-    <footer class="py-12 border-t border-gray-100 text-center text-gray-400 text-sm">
-        &copy; 2026 Kooky Kiosk. All Rights Reserved.
+    <footer class="py-16 border-t border-gray-100 text-center">
+        <p class="text-gray-400 text-xs font-bold tracking-widest uppercase mb-2">Kooky Kiosk &copy; 2026</p>
+        <p class="text-gray-300 text-[10px]">Premium Snack Purveyors</p>
     </footer>
 
     <script>
@@ -76,31 +84,9 @@
                 container.innerHTML = ''; 
 
                 rows.forEach(row => {
-                    // This handles CSV parsing with quotes for commas inside descriptions
                     const columns = row.match(/(".*?"|[^",\r\n]+)(?=\s*,|\s*$)/g);
                     
-                    if (columns && columns.length >= 3) {
+                    if (columns && columns.length >= 2) {
                         const name = columns[0].replace(/"/g, "");
                         const img = columns[1].replace(/"/g, "");
-                        const desc = columns[2].replace(/"/g, "");
-
-					container.innerHTML += `
-						<div class="product-card group bg-white rounded-[2rem] p-4 shadow-sm border border-gray-50 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-							<div class="relative overflow-hidden rounded-[1.5rem] bg-gray-50 mb-6 aspect-square">
-								<img src="${img}" class="product-image w-full h-full object-cover transition-transform duration-700" alt="${name}">
-							</div>
-							<div class="px-2 pb-4"> <h3 class="text-xl font-bold text-gray-900 group-hover:text-orange-500 transition-colors">${name}</h3>
-								<p class="text-gray-500 text-sm mt-2 leading-relaxed line-clamp-2">${desc}</p>
-							</div>
-						</div>
-					`;
-                    }
-                });
-            } catch (error) {
-                document.getElementById('product-container').innerHTML = '<p class="col-span-full text-center py-10 text-gray-400">Unable to load inventory. Check Google Sheet permissions.</p>';
-            }
-        }
-        loadProducts();
-    </script>
-</body>
-</html>
+                        // We
